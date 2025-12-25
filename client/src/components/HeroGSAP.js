@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import './HeroGSAP.css';
-import heroImage from '../assets/hero/hero1.jpg'; // Path from your file structure
+import heroImage from '../assets/hero/animation-1.jpg'; // Path from your file structure
 
 const HeroGSAP = () => {
     const heroRef = useRef(null);

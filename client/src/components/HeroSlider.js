@@ -3,11 +3,14 @@ import { gsap } from 'gsap';
 import './HeroSlider.css';
 
 // Import images
-import img1 from '../assets/hero/hero1.jpg';
-import img2 from '../assets/hero/hero2.jpg';
-import img3 from '../assets/hero/hero3.jpg';
+import img1 from '../assets/hero/bg-image.jpg';
+import img2 from '../assets/hero/animation-2.jpg';
+import img3 from '../assets/hero/animation-3.jpg';
+import img4 from '../assets/hero/animation-4.jpg';
+import img5 from '../assets/hero/animation-5.jpg';
+import img6 from '../assets/hero/animation-6.jpg';
 
-const images = [img1, img2, img3];
+const images = [img1, img2, img3, img4, img5, img6 ];
 
 const HeroSlider = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);

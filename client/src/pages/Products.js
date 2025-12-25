@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './Products.css';
 
 // Importing images
-import product1 from '../assets/hero/hero1.jpg';
-import product2 from '../assets/hero/hero2.jpg';
-import product3 from '../assets/hero/hero3.jpg';
+import product1 from '../assets/hero/animation-1.jpg';
+import product2 from '../assets/hero/animation-1.jpg';
+import product3 from '../assets/hero/animation-1.jpg';
 
 const allProducts = [
     { id: 1, name: "The Classic Straight", price: "$28.00", category: "Men's Vintage", img: product1, status: "Best Seller" },

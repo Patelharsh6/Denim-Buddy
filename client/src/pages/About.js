@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import './About.css';
 // Ensure you have these images or change the path to what you have in assets
-import aboutHero from '../assets/hero/hero1.jpg'; 
-import factoryImg from '../assets/hero/hero1.jpg'; 
+import aboutHero from '../assets/hero/animation-1.jpg'; 
+import factoryImg from '../assets/hero/animation-1.jpg'; 
 
 const About = () => {
     
