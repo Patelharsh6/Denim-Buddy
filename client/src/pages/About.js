@@ -60,11 +60,7 @@ const About = () => {
                 </div>
             </section>
 
-            {/* 4. Bottom CTA */}
-            <div className="about-cta">
-                <h2>Ready to Work With Us?</h2>
-                <button className="cta-button">Contact Our Team</button>
-            </div>
+            
         </div>
     );
 };

@@ -1,78 +1,45 @@
-/* --- GLOBAL FOOTER STYLES --- */
+/* --- FOOTER CONTAINER --- */
 .footer {
-    background-color: #0f172a; /* Industrial Dark Navy */
-    color: #cbd5e1;
-    padding: 80px 0 20px 0;
+    background-color: #0f172a; 
+    /* background-image: url('../assets/hero/footer-bg.jpg'); */
+    color: #cbd5e1; /* Light Grey Text */
+    padding: 80px 0 0 0;
     font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
+    width: 100%;
 }
 
 .footer-container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 0 40px;
-    
-    /* DESKTOP LAYOUT: 4 Columns */
+    padding: 0 25px;
     display: grid;
-    /* Brand col gets 2 parts, others get 1 part, Newsletter gets 1.5 parts */
-    grid-template-columns: 2fr 1fr 1fr 1.5fr; 
-    gap: 40px;
+    /* Responsive Grid: Creates columns automatically based on available width */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
 }
 
-/* --- COLUMN STYLES --- */
+/* --- COLUMNS & HEADINGS --- */
 .footer-col h4 {
     color: #ffffff;
     font-size: 1.1rem;
+    font-weight: 700;
     margin-bottom: 25px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-weight: 700;
+}
+
+/* --- BRAND COLUMN --- */
+.footer-logo img {
+    height: 40px;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1); /* Turns logo white if it's black */
 }
 
 .brand-desc {
+    font-size: 0.95rem;
     line-height: 1.6;
-    margin-bottom: 20px;
-    max-width: 300px; /* Prevents text from stretching too wide */
-}
-
-/* Logo Section */
-.footer-logo {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.footer-logo img {
-    height: 40px;
-    margin-right: 12px;
-}
-
-.footer-logo span {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #ffffff;
-    letter-spacing: 1px;
-}
-
-/* Links List */
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-col ul li {
-    margin-bottom: 12px;
-}
-
-.footer-col ul li a {
-    color: #cbd5e1;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.footer-col ul li a:hover {
-    color: #3a86ff;
-    padding-left: 8px; /* Slight movement effect */
+    margin-bottom: 25px;
+    max-width: 300px;
 }
 
 /* Social Icons */
@@ -82,144 +49,222 @@
 }
 
 .social-links a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 40px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
+    transition: all 0.3s ease;
+    font-size: 1rem;
     text-decoration: none;
-    transition: 0.3s;
 }
 
 .social-links a:hover {
-    background: #3a86ff;
+    background-color: #3a86ff; /* Brand Blue */
     transform: translateY(-3px);
 }
 
-/* Newsletter Form */
-.footer-form {
+/* --- NAVIGATION LINKS --- */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: #3a86ff;
+    padding-left: 5px; /* Subtle slide effect */
+}
+
+/* --- CONTACT LIST --- */
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
     display: flex;
-    margin-top: 20px;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
 }
 
-.footer-form input {
-    padding: 12px;
+.contact-list i {
+    color: #3a86ff;
+    margin-top: 4px; /* Align icon with text top */
+}
+
+/* --- NEWSLETTER FORM --- */
+.newsletter-col p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.newsletter-form input {
+    background: transparent;
     border: none;
-    border-radius: 4px 0 0 4px;
-    outline: none;
+    color: white;
+    padding: 10px;
     width: 100%;
-    font-size: 0.9rem;
+    outline: none;
 }
 
-.footer-form button {
-    padding: 12px 20px;
+.newsletter-form button {
     background-color: #3a86ff;
     color: white;
     border: none;
-    border-radius: 0 4px 4px 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
     cursor: pointer;
-    font-weight: bold;
     transition: 0.3s;
 }
 
-.footer-form button:hover {
+.newsletter-form button:hover {
     background-color: #2563eb;
 }
 
-/* Footer Bottom */
+/* --- FOOTER BOTTOM --- */
 .footer-bottom {
-    margin-top: 60px;
-    padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-    font-size: 0.85rem;
-    color: #64748b;
+    margin-top: 60px;
+    padding: 25px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap; /* Wraps on mobile */
+    gap: 20px;
 }
 
-.footer-bottom a {
+.copyright {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.9rem;
+}
+
+.copyright a {
     color: #94a3b8;
     text-decoration: none;
-    margin-left: 5px;
 }
 
-/* --- TABLET RESPONSIVENESS (Max-width: 1024px) --- */
-@media screen and (max-width: 1024px) {
-    .footer-container {
-        /* Switch to 2 columns per row */
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-    }
+.copyright a:hover {
+    color: white;
 }
 
-/* --- MOBILE RESPONSIVENESS (Max-width: 600px) --- */
-@media screen and (max-width: 600px) {
+/* --- DEVELOPER CREDIT (Made By) --- */
+.developer-credit {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.developer-credit strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.dev-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.dev-icons a {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.dev-icons a:hover {
+    color: #3a86ff; /* Lights up blue on hover */
+    transform: scale(1.1);
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media screen and (max-width: 768px) {
     .footer-container {
-        /* Switch to single column stack */
-        grid-template-columns: 1fr;
-        text-align: center;
         gap: 40px;
     }
 
-    /* Center the Logo area */
-    .footer-logo {
-        justify-content: center;
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
     }
-
-    /* Center the description text */
-    .brand-desc {
-        margin: 0 auto 20px auto;
+    
+    .copyright {
+        flex-direction: column;
+        gap: 10px;
     }
-
-    /* Center Social Icons */
-    .social-links {
-        justify-content: center;
-    }
-
-    /* Center Form */
-    .footer-form {
-        justify-content: center;
-    }
-
-    /* Adjust Form Input width */
-    .footer-form input {
-        width: 70%;
+    
+    .developer-credit {
+        flex-direction: column; /* Stack name and icons on small phones */
+        gap: 10px;
     }
 }
 
+/* --- CONTACT LIST --- */
+.contact-list { 
+    list-style: none; 
+    padding: 0; 
+}
 
-/* --- MOBILE RESPONSIVENESS (Safe Max-width) --- */
-@media screen and (max-width: 600px) {
-    .footer-container {
-        grid-template-columns: 1fr; /* Stack vertically */
-        text-align: center;
-        gap: 30px;
-        padding: 0 20px; /* Reduced padding for mobile */
-        width: 100%; /* Ensure it fits */
-    }
+.contact-list li {
+    margin-bottom: 20px;
+}
 
-    /* Fix the Input Form Width */
-    .footer-form {
-        flex-direction: column; /* Stack input and button */
-        align-items: center;
-        width: 100%;
-    }
+/* The clickable Link Styling */
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    font-size: 0.95rem;
+    color: #f1f5f9; /* Default text color */
+    text-decoration: none; /* Removes underline */
+    transition: all 0.3s ease;
+}
 
-    .footer-form input {
-        width: 100%; /* Take full width */
-        border-radius: 4px; /* Round corners */
-        margin-bottom: 10px; /* Space between input and button */
-    }
+/* Icon Styling */
+.footer-contact-item i { 
+    color: #ffffff; 
+    font-size: 1.1rem;
+    margin-top: 3px; 
+    transition: 0.3s;
+}
 
-    .footer-form button {
-        width: 100%; /* Make button full width too */
-        border-radius: 4px;
-    }
+/* Hover Effect: Text turns white, slides right slightly */
+.footer-contact-item:hover {
+    color: #ffffff;
+    transform: translateX(5px);
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
 
-    /* Fix Social Icons Alignment */
-    .social-links {
-        justify-content: center;
-    }
+.footer-contact-item:hover i {
+    color: #3a86ff; /* Icon turns blue on hover */
 }

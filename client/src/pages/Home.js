@@ -104,7 +104,7 @@ const Home = () => {
                         <div className="grid-row">
                             <div className="grid-box red-box">
                                 <h3>200+</h3>
-                                <p>Exhibitions</p>
+                                <p>Client</p>
                             </div>
                             <div className="grid-box img-box">
                                 <img src={img2} alt="Perfect Fit" />
@@ -176,13 +176,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* 6. CTA */}
-            <section className="home-cta">
-                <div className="cta-content">
-                    <h2>Ready to scale your denim inventory?</h2>
-                    <button className="btn-main">Get Wholesale Catalog</button>
-                </div>
-            </section>
+            
         </div>
     );
 };
