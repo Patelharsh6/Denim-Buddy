@@ -1,72 +1,72 @@
-import "./About.css";
+import React, { useEffect } from 'react';
+import './About.css';
+// Ensure you have these images or change the path to what you have in assets
+import aboutHero from '../assets/hero/hero1.jpg'; 
+import factoryImg from '../assets/hero/hero1.jpg'; 
 
-export default function About(){
-  return(
-    <div className="about">
+const About = () => {
+    
+    // Simple fade-in effect when page loads
+    useEffect(() => {
+        window.scrollTo(0, 0); // Always start at top
+    }, []);
 
-      {/* HERO */}
-      <section className="about-hero">
-        <div className="about-hero-content">
-          <h1>More Than Just a Pair of Jeans.</h1>
-          <p>
-            Built on craftsmanship, powered by manufacturing excellence,
-            and driven by trust.
-          </p>
+    return (
+        <div className="about-page">
+            
+            {/* 1. Header Section */}
+            <div className="about-header">
+                <h1>THE DENIM BUDDY STORY</h1>
+                <p>Redefining manufacturing excellence from the thread up.</p>
+            </div>
+
+            {/* 2. Who We Are (Split Layout) */}
+            <section className="about-section">
+                <div className="about-content">
+                    <h2>More Than Just a Brand.</h2>
+                    <p>
+                        Founded in the heart of the textile industry, Denim Buddy was built 
+                        on a simple premise: <strong>Quality should never be a luxury; it should be a standard.</strong>
+                    </p>
+                    <p>
+                        We aren't just a label. We are a fully vertical manufacturing partner. 
+                        From selecting the finest raw cotton to the final rivet, we control 
+                        every step of the process. This ensures that every pair of jeans 
+                        leaving our facility meets a zero-defect standard.
+                    </p>
+                </div>
+                <div className="about-image">
+                    <img src={aboutHero} alt="Denim Manufacturing Process" />
+                </div>
+            </section>
+
+            {/* 3. Our Manufacturing Edge (Reverse Split) */}
+            <section className="about-section reverse">
+                <div className="about-image">
+                    <img src={factoryImg} alt="Factory Floor" />
+                </div>
+                <div className="about-content">
+                    <h2>Built for Scale.</h2>
+                    <p>
+                        Our facility is designed for high-volume, high-precision output. 
+                        Whether you are a boutique brand or a global retailer, our infrastructure 
+                        adapts to your needs.
+                    </p>
+                    <ul className="about-list">
+                        <li><i className="fas fa-check-circle"></i> <strong>50,000+</strong> Units Monthly Capacity</li>
+                        <li><i className="fas fa-check-circle"></i> <strong>Sustainable</strong> Washing Techniques</li>
+                        <li><i className="fas fa-check-circle"></i> <strong>Global</strong> Logistics Network</li>
+                    </ul>
+                </div>
+            </section>
+
+            {/* 4. Bottom CTA */}
+            <div className="about-cta">
+                <h2>Ready to Work With Us?</h2>
+                <button className="cta-button">Contact Our Team</button>
+            </div>
         </div>
-      </section>
+    );
+};
 
-      {/* STORY */}
-      <section className="about-story">
-        <div className="story-content">
-          <h2>Who We Are</h2>
-          <p>
-            Denim Buddy was born from a passion for craftsmanship and a legacy
-            in manufacturing. We saw a gap in the market for men’s jeans that
-            were both high-fashion and high-utility.
-          </p>
-          <p>
-            Unlike typical brands, we are the source. From fabric selection
-            to finishing, every stage is handled in-house. This gives us
-            complete control over quality, consistency, and scale.
-          </p>
-          <p>
-            Denim Buddy is built to be the “Buddy” you and your customers can
-            rely on — today, tomorrow, and as your business grows.
-          </p>
-        </div>
-      </section>
-
-      {/* VALUES */}
-      <section className="about-values">
-        <h2>What Defines Denim Buddy</h2>
-
-        <div className="values-grid">
-          <div className="value-card">
-            <h3>Manufacturing DNA</h3>
-            <p>
-              We don’t outsource quality. Our factory-first approach ensures
-              reliability at every scale.
-            </p>
-          </div>
-
-          <div className="value-card">
-            <h3>Zero-Defect Mindset</h3>
-            <p>
-              Each pair is inspected to meet durability and finishing standards
-              demanded by global partners.
-            </p>
-          </div>
-
-          <div className="value-card">
-            <h3>Partner-Focused Growth</h3>
-            <p>
-              We grow when our partners grow — with consistent supply,
-              pricing stability, and long-term trust.
-            </p>
-          </div>
-        </div>
-      </section>
-
-    </div>
-  );
-}
+export default About;

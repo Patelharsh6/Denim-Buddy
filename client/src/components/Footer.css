@@ -1,28 +1,225 @@
-.footer{
-  background:#020617;
-  color:#d1d5db;
-  padding:50px 20px;
-  text-align:center;
+/* --- GLOBAL FOOTER STYLES --- */
+.footer {
+    background-color: #0f172a; /* Industrial Dark Navy */
+    color: #cbd5e1;
+    padding: 80px 0 20px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
 }
 
-.footer-content{
-  max-width:800px;
-  margin:auto;
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    
+    /* DESKTOP LAYOUT: 4 Columns */
+    display: grid;
+    /* Brand col gets 2 parts, others get 1 part, Newsletter gets 1.5 parts */
+    grid-template-columns: 2fr 1fr 1fr 1.5fr; 
+    gap: 40px;
 }
 
-.footer-content h3{
-  color:white;
-  font-size:1.6rem;
-  margin-bottom:10px;
+/* --- COLUMN STYLES --- */
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
 }
 
-.footer-content p{
-  font-size:0.95rem;
-  line-height:1.6;
-  margin-bottom:25px;
+.brand-desc {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 300px; /* Prevents text from stretching too wide */
 }
 
-.footer-bottom{
-  font-size:0.85rem;
-  color:#9ca3af;
+/* Logo Section */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    height: 40px;
+    margin-right: 12px;
+}
+
+.footer-logo span {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+/* Links List */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #3a86ff;
+    padding-left: 8px; /* Slight movement effect */
+}
+
+/* Social Icons */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: #3a86ff;
+    transform: translateY(-3px);
+}
+
+/* Newsletter Form */
+.footer-form {
+    display: flex;
+    margin-top: 20px;
+}
+
+.footer-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.footer-form button {
+    padding: 12px 20px;
+    background-color: #3a86ff;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.footer-form button:hover {
+    background-color: #2563eb;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.footer-bottom a {
+    color: #94a3b8;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+/* --- TABLET RESPONSIVENESS (Max-width: 1024px) --- */
+@media screen and (max-width: 1024px) {
+    .footer-container {
+        /* Switch to 2 columns per row */
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
+}
+
+/* --- MOBILE RESPONSIVENESS (Max-width: 600px) --- */
+@media screen and (max-width: 600px) {
+    .footer-container {
+        /* Switch to single column stack */
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    /* Center the Logo area */
+    .footer-logo {
+        justify-content: center;
+    }
+
+    /* Center the description text */
+    .brand-desc {
+        margin: 0 auto 20px auto;
+    }
+
+    /* Center Social Icons */
+    .social-links {
+        justify-content: center;
+    }
+
+    /* Center Form */
+    .footer-form {
+        justify-content: center;
+    }
+
+    /* Adjust Form Input width */
+    .footer-form input {
+        width: 70%;
+    }
+}
+
+
+/* --- MOBILE RESPONSIVENESS (Safe Max-width) --- */
+@media screen and (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Stack vertically */
+        text-align: center;
+        gap: 30px;
+        padding: 0 20px; /* Reduced padding for mobile */
+        width: 100%; /* Ensure it fits */
+    }
+
+    /* Fix the Input Form Width */
+    .footer-form {
+        flex-direction: column; /* Stack input and button */
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer-form input {
+        width: 100%; /* Take full width */
+        border-radius: 4px; /* Round corners */
+        margin-bottom: 10px; /* Space between input and button */
+    }
+
+    .footer-form button {
+        width: 100%; /* Make button full width too */
+        border-radius: 4px;
+    }
+
+    /* Fix Social Icons Alignment */
+    .social-links {
+        justify-content: center;
+    }
 }

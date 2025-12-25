@@ -1,38 +1,67 @@
-import {useState} from "react";
-import {Link} from "react-router-dom";
-import "./Navbar.css";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
+import logo from '../assets/logo.png';
 
-export default function Navbar(){
-  const[open,setOpen]=useState(false);
+const Navbar = () => {
+    const [click, setClick] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
-  return(
-    <nav className="navbar">
-      <div className="nav-container">
+    const handleClick = () => setClick(!click);
+    const closeMobileMenu = () => setClick(false);
 
-        <div className="logo">Denim Buddy</div>
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
-        <div className={`nav-links ${open?"active":""}`}>
-          <Link to="/" onClick={()=>setOpen(false)}>Home</Link>
-          <Link to="/about" onClick={()=>setOpen(false)}>About</Link>
-          <Link to="/wholesale" onClick={()=>setOpen(false)}>Wholesale</Link>
-          <Link to="/contact" onClick={()=>setOpen(false)}>Contact</Link>
+    return (
+        <nav className={scrolled ? 'navbar active' : 'navbar'}>
+            <div className="navbar-container">
+                
+                {/* LOGO ONLY (Image) - Text Removed */}
+                <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+                    <img src={logo} alt="Denim Buddy Logo" />
+                </Link>
 
-          <Link to="/contact">
-            <button className="mobile-btn">Partner With Us</button>
-          </Link>
-        </div>
+                {/* HAMBURGER ICON */}
+                <div className={`menu-icon ${click ? 'active' : ''}`} onClick={handleClick}>
+                    {/* If you use FontAwesome, keep your logic here. Example: */}
+                    <i className={click ? 'fas fa-times' : 'fas fa-bars'} /> 
+                </div>
 
-        <div className="hamburger" onClick={()=>setOpen(!open)}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+                {/* MENU LINKS */}
+                <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                    <li className="nav-item">
+                        <Link to="/" className="nav-links" onClick={closeMobileMenu}>Home</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/about" className="nav-links" onClick={closeMobileMenu}>About Us</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/products" className="nav-links" onClick={closeMobileMenu}>Products</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/contact" className="nav-links-mobile" onClick={closeMobileMenu}>Contact</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/contact"><button className="btn-desktop">Contact Us</button> 
+                </Link>
+                    </li>
+                </ul>
 
-        <Link to="/contact">
-          <button className="nav-btn desktop">Partner With Us</button>
-        </Link>
-
-      </div>
-    </nav>
-  );
+                {/* DESKTOP BUTTON */}
+                
+            </div>
+        </nav>
+    );
 }
+
+export default Navbar;

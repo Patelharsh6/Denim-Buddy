@@ -1,0 +1,132 @@
+/* --- Container --- */
+.hero-slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #0f172a;
+    overflow: hidden; /* Keeps everything inside */
+}
+
+/* --- LAYER 0: Background Images (Sent to Back) --- */
+.hero-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Base level */
+}
+
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.hero-bg-image.active {
+    opacity: 0.6; /* Visible */
+}
+
+/* --- LAYER 1: Content Overlay (Sits on Top) --- */
+.hero-content-overlay {
+    position: absolute; /* Sits on top of images */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Higher than images */
+    background: linear-gradient(to right, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.2) 100%);
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 20; /* Content higher than overlay background */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+    color: white;
+    width: 100%;
+}
+
+/* --- Typography --- */
+.subtitle {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #3a86ff;
+    margin-bottom: 1rem;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+}
+
+/* --- BUTTONS (Ensure Visibility) --- */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 30; /* Highest priority */
+}
+
+.btn {
+    padding: 15px 35px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    /* CRITICAL FIX: Ensure they are not hidden by default CSS */
+    opacity: 1; 
+    visibility: visible;
+}
+
+.btn-primary {
+    background-color: #3a86ff;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: #0f172a;
+    transform: translateY(-2px);
+}
+
+/* --- Mobile --- */
+@media screen and (max-width: 768px) {
+    .hero-content h1 { font-size: 3.5rem; }
+    .hero-buttons { flex-direction: column; max-width: 300px; }
+    .btn { width: 100%; }
+}

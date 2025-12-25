@@ -1,115 +1,269 @@
-.navbar{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:#0f172a;
-  padding:14px 20px;
+/* --- GLOBAL RESET --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-container{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+/* --- NAVBAR WRAPPER --- */
+.navbar {
+    background: transparent;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+    transition: all 0.3s ease;
 }
 
-/* LOGO */
-.logo{
-  font-size:1.5rem;
-  font-weight:600;
-  color:white;
+/* Active class (added via JS when scrolling) */
+.navbar.active {
+    background: #ffffff;
+    height: 70px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* LINKS DESKTOP */
-.nav-links{
-  display:flex;
-  gap:30px;
-  align-items:center;
+.navbar-container {
+    display: flex;
+    justify-content: space-between; /* Ensures Logo is Left, Icon is Right */
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 25px;
+    position: relative;
+    flex-wrap: nowrap; /* Safety: Never wrap items */
 }
 
-.nav-links a{
-  color:#d1d5db;
-  text-decoration:none;
-  font-size:0.95rem;
-  transition:0.3s;
+/* --- LOGO STYLES --- */
+.navbar-logo {
+    justify-self: start;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    z-index: 2100;
+    flex-shrink: 0; /* Never squash the logo */
 }
 
-.nav-links a:hover{
-  color:white;
+.navbar-logo img {
+    height: 50px;
+    width: auto;
+    transition: height 0.3s ease;
 }
 
-/* BUTTON */
-.nav-btn{
-  background:#1e40af;
-  color:white;
-  border:none;
-  padding:10px 20px;
-  border-radius:4px;
-  cursor:pointer;
-  transition:0.3s;
+/* --- MENU ICON (Hidden on Desktop) --- */
+.menu-icon {
+    display: none;
 }
 
-.nav-btn:hover{
-  background:#1d4ed8;
+/* --- DESKTOP MENU --- */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    margin-left: auto;
+    align-items: center;
 }
 
-/* HAMBURGER */
-.hamburger{
-  display:none;
-  flex-direction:column;
-  gap:5px;
-  cursor:pointer;
+.nav-links {
+    color: #333;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.hamburger span{
-  width:26px;
-  height:3px;
-  background:white;
+.nav-links:hover {
+    color: #3a86ff;
+    /* text-decoration: underline #3a86ff; */
+    border-bottom: 2px solid #3a86ff;
+    transform: translateY(-2px);
 }
 
-/* MOBILE */
-.mobile-btn{
-  display:none;
+.nav-links-mobile {
+    display: none; /* Hidden on Desktop */
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
+/* Desktop Button */
+.btn-desktop {
+    padding: 10px 24px;
+    background-color: #1a365d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 20px;
+    transition: 0.3s;
+}
 
-  .hamburger{
-    display:flex;
-  }
+.btn-desktop:hover {
+    background-color: #3a86ff;
+    transform: translateY(-2px);
+}
 
-  .nav-btn.desktop{
-    display:none;
-  }
+/* =========================================
+   MOBILE RESPONSIVENESS (Max 960px)
+   ========================================= */
+@media screen and (max-width: 960px) {
+    
+    .navbar {
+        background: #ffffff;
+        position: fixed;
+    }
 
-  .nav-links{
-    position:absolute;
-    top:64px;
-    left:0;
-    width:100%;
-    background:#020617;
-    flex-direction:column;
-    align-items:center;
-    gap:20px;
-    padding:30px 0;
-    transform:translateY(-200%);
-    transition:0.4s ease;
-  }
+    .navbar-container {
+        padding: 0 20px;
+    }
 
-  .nav-links.active{
-    transform:translateY(0);
-  }
+    /* 1. THE DROPDOWN CONTAINER */
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 150%;
+        left: 0;
+        
+        /* CLOSED STATE */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        
+        background: #ffffff;
+        border-top: 1px solid #e2e8f0;
+        box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.1);
+        padding: 0;
+        z-index: 1900;
+        
+        /* CLOSE ANIMATION: Smooth fade out, no bounce */
+        transition: all 0.3s ease-in-out;
+    }
 
-  .mobile-btn{
-    display:block;
-    width:80%;
-    text-align:center;
-    padding:12px;
-    background:#1e40af;
-    color:white;
-    border:none;
-    border-radius:4px;
-  }
+    /* 2. ACTIVE STATE (OPEN) */
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        /* OPEN ANIMATION: Bouncy and smooth */
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    /* 3. MENU ITEMS (The Stagger Animation) */
+    .nav-item {
+        width: 100%;
+        opacity: 0;
+        transform: translateX(-20px);
+        /* CLOSE ANIMATION: Disappear quickly without delay */
+        transition: all 0.2s ease; 
+    }
+
+    /* OPEN ANIMATION: Items slide in */
+    .nav-menu.active .nav-item {
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 0.4s ease; /* Slower entrance */
+    }
+
+    /* STAGGER DELAYS (Only when opening) */
+    .nav-menu.active .nav-item:nth-child(1) { transition-delay: 0.1s; }
+    .nav-menu.active .nav-item:nth-child(2) { transition-delay: 0.2s; }
+    .nav-menu.active .nav-item:nth-child(3) { transition-delay: 0.3s; }
+    .nav-menu.active .nav-item:nth-child(4) { transition-delay: 0.4s; }
+    .nav-menu.active .nav-item:nth-child(5) { transition-delay: 0.5s; }
+
+    /* 4. ICON ANIMATION (Highlight & Rotate) */
+    .menu-icon {
+        display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #1a365d; /* Default Dark Blue */
+        margin-left: auto;
+        transition: all 0.3s ease; /* Smooth color change */
+    }
+
+    /* ACTIVE STATE: When clicked, turn Brand Blue and rotate */
+    .menu-icon.active {
+        color: #3a86ff; /* Highlight Color */
+        transform: rotate(90deg); /* Optional: Fun rotation effect */
+    }
+
+    /* 5. LINK STYLES */
+    .nav-links {
+        text-align: left;
+        padding: 18px 25px;
+        width: 100%;
+        display: block;
+        font-size: 1rem;
+        color: #334155;
+        font-weight: 500;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .nav-links:hover {
+        background-color: #f8fafc;
+        color: #3a86ff;
+        padding-left: 30px;
+    }
+
+    /* Hide Desktop Button */
+    .btn-desktop { display: none; }
+
+    /* 6. MOBILE BUTTON */
+    .nav-links-mobile {
+        display: block;
+        text-align: center;
+        margin: 20px auto;
+        padding: 14px 0;
+        width: calc(100% - 40px);
+        background: #1a365d;
+        color: white;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        transition: 0.3s;
+        
+        opacity: 0;
+        transform: translateY(10px);
+        /* No delay on close, 0.6s delay on open */
+        transition: all 0.3s ease; 
+    }
+
+    .nav-menu.active .nav-links-mobile {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.6s; /* Wait for links to finish */
+    }
+}
+
+/* =========================================
+   SMALL PHONE FIXES (Max 550px)
+   (Prevents logo/icon collision)
+   ========================================= */
+@media screen and (max-width: 550px) {
+    
+    .navbar-container {
+        padding: 0 15px; /* Tighter padding */
+    }
+
+    /* Shrink Logo */
+    .navbar-logo img {
+        height: 30px; 
+    }
+
+    /* Adjust Icon */
+    .menu-icon {
+        font-size: 1.5rem;
+    }
 }

@@ -1,0 +1,21 @@
+/* --- UNIVERSAL RESET (CRITICAL FOR RESPONSIVENESS) --- */
+* {
+    box-sizing: border-box; /* Fixes the padding calculation issue */
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100vw; /* Ensures screen never exceeds device width */
+    overflow-x: hidden; /* Hides any accidental overflow */
+    font-family: 'Inter', sans-serif; /* Optional: Sets your font */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Fix for Images causing overflow */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

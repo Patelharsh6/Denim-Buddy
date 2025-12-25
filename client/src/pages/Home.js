@@ -1,92 +1,71 @@
-import "./Home.css";
-import HeroGSAP from "../components/HeroGSAP";
-import ScrollImageShowcase    from "../components/ScrollImageShowcase";
-import DenimWave from "../components/DenimWave";
-import HorizontalEditorial from "../components/HorizontalEditorial";
-import FactoryStats from "../components/FactoryStats";
+import React, { useEffect } from 'react';
+// REMOVE THIS LINE: import HeroGSAP from '../components/HeroGSAP'; 
+import { gsap } from 'gsap';
+import './Home.css';
+import HeroSlider from '../components/HeroSlider';
 
-export default function Home(){
-  return(
-    <div className="home">
+// Register GSAP ScrollTrigger
 
-      {/* HERO SECTION */}
-      <div className="main-stack">
-        <section className="section-wrap">
-          <HeroGSAP />
-        </section>
-        <section className="section-wrap">
-          <ScrollImageShowcase />
-        </section>
-        <section className="section-wrap">
-          <DenimWave />
-        </section>
-        <section className="section-wrap">
-          <HorizontalEditorial />
-        </section>
-        <section className="section-wrap">
-          <FactoryStats />
-        </section>
-      </div>
+const Home = () => {
+    useEffect(() => {
+        // Animation for the "Manufacturing Edge" Section
+        gsap.from(".info-card", {
+            scrollTrigger: {
+                trigger: ".info-section",
+                start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.1
+        });
+    }, []);
 
-      {/* FEATURED FITS */}
-      <section className="fits">
-        <h2>Featured Fits</h2>
-        <p className="fits-sub">
-          Crafted from high-grade fabric designed to withstand the wear and tear of everyday life.
-        </p>
+    return (
+        <div className="home-page">
+            
+            {/* ONLY USE THE SLIDER HERE - REMOVED <HeroGSAP /> */}
+            <HeroSlider />
 
-        <div className="fits-grid">
-          <div className="fit-card">
-            <div className="fit-img"></div>
-            <h3>The Slim Buddy</h3>
-            <p>Modern, sleek, and sharp.</p>
-          </div>
+            {/* MANUFACTURING STATS SECTION */}
+            <section className="info-section">
+                <div className="container">
+                    <div className="section-header">
+                        <h2>Vertical Integration. Unrivaled Quality.</h2>
+                        <div className="accent-line"></div>
+                        <p>We are more than a brand—we are the makers. Based in the textile heart of our city, we control every step of the process.</p>
+                    </div>
 
-          <div className="fit-card">
-            <div className="fit-img"></div>
-            <h3>The Classic Buddy</h3>
-            <p>Timeless straight-cut for daily reliability.</p>
-          </div>
+                    <div className="info-grid">
+                        <div className="info-card">
+                            <i className="fas fa-industry"></i>
+                            <h3>50k+ Units</h3>
+                            <p>Monthly scalable production for global demand.</p>
+                        </div>
+                        <div className="info-card">
+                            <i className="fas fa-check-double"></i>
+                            <h3>Zero Defect</h3>
+                            <p>Every pair is factory-inspected for 100% durability.</p>
+                        </div>
+                        <div className="info-card">
+                            <i className="fas fa-globe-americas"></i>
+                            <h3>Global Export</h3>
+                            <p>Shipping direct from our hub to retail partners worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-          <div className="fit-card">
-            <div className="fit-img"></div>
-            <h3>The Relaxed Buddy</h3>
-            <p>Maximum comfort with factory-strength durability.</p>
-          </div>
+            {/* CALL TO ACTION SECTION */}
+            <section className="home-cta">
+                <div className="cta-content">
+                    <h2>Ready to scale your denim inventory?</h2>
+                    <p>Partner with a leading industry player today.</p>
+                    <button className="btn-main">Get Wholesale Catalog</button>
+                </div>
+            </section>
         </div>
-      </section>
+    );
+};
 
-      {/* MANUFACTURING EDGE */}
-      <section className="manufacturing">
-        <h2>Vertical Integration. Unrivaled Quality.</h2>
-        <p>
-          We are more than a brand—we are the makers.
-          By owning the production process, we ensure that every pair of Denim Buddy jeans
-          meets a zero-defect standard. From raw yarn selection to advanced eco-wash laundry,
-          we control the quality so you can trust the product.
-        </p>
-      </section>
-
-      {/* FUN FACTS */}
-      <section className="facts">
-        <div className="fact">
-          <h3>50k+</h3>
-          <p>Units Monthly</p>
-        </div>
-        <div className="fact">
-          <h3>100%</h3>
-          <p>Factory Inspected</p>
-        </div>
-        <div className="fact">
-          <h3>15+</h3>
-          <p>Years Mastery</p>
-        </div>
-        <div className="fact">
-          <h3>Direct</h3>
-          <p>To Partner</p>
-        </div>
-      </section>
-
-    </div>
-  );
-}
+export default Home;
