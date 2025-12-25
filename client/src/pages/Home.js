@@ -26,10 +26,10 @@ const Home = () => {
             y: 30, opacity: 0, duration: 1
         });
 
-        gsap.from(".grid-box", {
-            scrollTrigger: { trigger: ".facts-grid-wrapper", start: "top 80%" },
-            scale: 0.9, opacity: 0, duration: 0.8, stagger: 0.2, ease: "back.out(1.7)"
-        });
+        // gsap.from(".grid-box", {
+        //     scrollTrigger: { trigger: ".facts-grid-wrapper", start: "top 80%" },
+        //     scale: 0.9, opacity: 0, duration: 0.8, stagger: 0.2, ease: "back.out(1.7)"
+        // });
 
         // Animation for "Why Choose Us"
         gsap.from(".choose-text-panel", {
@@ -53,9 +53,7 @@ const Home = () => {
                         <h4 className="about-subtitle">WHO WE ARE</h4>
                         <h2 className="about-title">Find Your Perfect Fit With Denim Buddy.</h2>
                         <p className="about-text">
-                            We understand that no two individuals are the same. Whether you prefer a classic straight fit, 
-                            a flattering ankle, or a comfort fit, Denim Buddy offers the perfect fit to enhance your unique 
-                            silhouette and embrace your personal style.
+                            Merging timeless style with uncompromising quality. As leading manufacturers based in Ahmedabad, Gujarat, India, we craft every pair from the thread up for the modern man who demands more.
                         </p>
                     </div>
                     <div className="about-divider"></div>
@@ -125,12 +123,10 @@ const Home = () => {
                     {/* Part A: Blue Text Panel */}
                     <div className="choose-text-panel">
                         <div className="about-decoration"><span className="deco-arrow" style={{color: '#d4af37'}}>➳</span></div>
-                        <h4 className="about-subtitle" style={{color: '#94a3b8'}}>OUR BENEFITS</h4>
-                        <h2 className="about-title" style={{color: '#fff'}}>Why You Should Choose Us?</h2>
+                        <h4 className="about-subtitle" style={{color: '#94a3b8'}}>The Manufacturing Edge (The Power Play)</h4>
+                        <h2 className="about-title" style={{color: '#fff'}}>Vertical Integration. Unrivaled Quality.</h2>
                         <p className="about-text" style={{color: '#cbd5e1'}}>
-                            When you choose Denim Buddy, you are not just getting a pair of ordinary jeans. 
-                            Our expert designers have poured their passion into creating jeans that go beyond mere fashion. 
-                            They are a testament to the artistry of denim craftsmanship.
+                            We are more than a brand—we are the makers. Operating from our state-of-the-art facility in Ahmedabad, we ensure that every pair of Denim Buddy jeans meets a zero-defect standard. From raw yarn selection to our advanced laundry in India, we control the quality so you can trust the product.
                         </p>
                     </div>
 
@@ -158,15 +154,24 @@ const Home = () => {
                         <div className="info-card">
                             <i className="fas fa-industry"></i>
                             <h3>50k+ Units</h3>
+                            <p>Scalable production for global demand</p>
                         </div>
                         <div className="info-card">
                             <i className="fas fa-check-double"></i>
                             <h3>Zero Defect</h3>
+                            <p>Every stitch verified in-house for durability</p>
                         </div>
                         <div className="info-card">
                             <i className="fas fa-globe-americas"></i>
                             <h3>Global Export</h3>
+                            <p> Shipping direct from our Ahmedabad Gujarat hub to retail partners worldwide</p>
                         </div>
+                        <div className="info-card">
+                            <i class="fa-solid fa-handshake"></i>
+                            <h3>Direct-to-Partner</h3>
+                            <p> No middlemen. Superior margins for your business</p>
+                        </div>
+
                     </div>
                 </div>
             </section>

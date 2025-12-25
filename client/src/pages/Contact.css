@@ -1,122 +1,202 @@
+/* --- PAGE LAYOUT --- */
 .contact-page {
     width: 100%;
-    padding-top: 90px;
     background-color: #f8fafc;
     min-height: 100vh;
-    font-family: 'Inter', sans-serif;
 }
 
-/* Header */
+/* --- HEADER --- */
 .contact-header {
-    text-align: center;
-    padding: 60px 20px 40px;
-    background-color: #1a365d;
+    background-color: #0f172a;
     color: white;
+    padding: 120px 20px 80px 20px;
+    text-align: center;
 }
 
 .contact-header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    font-weight: 800;
     margin-bottom: 10px;
-    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.accent-bar {
+    width: 60px;
+    height: 4px;
+    background-color: #3a86ff;
+    margin: 0 auto 20px auto;
 }
 
 .contact-header p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #cbd5e1;
 }
 
-/* Main Layout: Split Screen */
+/* --- MAIN CONTAINER --- */
 .contact-container {
     max-width: 1200px;
-    margin: -40px auto 60px; /* Pulls container up over the header */
-    padding: 0 20px;
+    margin: -50px auto 0 auto;
+    padding: 0 20px 100px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+}
+
+/* --- CONTACT GRID --- */
+.contact-info-grid {
     display: flex;
-    gap: 30px;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.phone{
- transform: rotate(90deg);
-}
-
-/* Left Side: Info Box */
-.contact-info {
-    flex: 1;
+/* CARD STYLING (Default) */
+.info-card {
     background: #ffffff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.contact-info h3 {
-    font-size: 1.5rem;
-    color: #0f172a;
-    margin-bottom: 15px;
-}
-
-.info-text {
-    color: #64748b;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-.info-item {
+    padding: 25px;
+    border-radius: 12px;
     display: flex;
-    align-items: flex-start;
-    margin-bottom: 25px;
+    align-items: center; /* Centered vertically on Desktop */
+    gap: 20px;
+    text-decoration: none;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border-left: 5px solid transparent;
 }
 
-.info-item i {
-    font-size: 1.2rem;
-    color: #3a86ff;
-    margin-right: 15px;
-    margin-top: 5px;
-}
 
-.info-item strong {
-    display: block;
+
+/* TEXT STYLING */
+.card-text h3 {
     color: #0f172a;
+    font-size: 1.1rem;
     margin-bottom: 5px;
+    font-weight: 700;
 }
 
-.info-item p {
+.card-text p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.4;
     margin: 0;
-    color: #475569;
 }
 
-.map-container {
-    margin-top: 30px;
-    border-radius: 8px;
+.cta-link {
+    font-size: 0.85rem;
+    color: #3a86ff;
+    font-weight: 600;
+    margin-top: 5px;
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: 0.3s ease;
+}
+
+/* --- DESKTOP HOVER EFFECTS ONLY --- */
+@media screen and (min-width: 961px) {
+    .info-card:hover {
+        transform: translateY(-8px); 
+        box-shadow: 0 15px 30px rgba(58, 134, 255, 0.15);
+        border-left: 5px solid #3a86ff;
+    }
+    .info-card:hover .cta-link {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* --- MAP SECTION --- */
+.map-wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    position: relative;
+}
+
+.map-frame {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 5px solid #ffffff;
 }
 
+/* --- ANIMATIONS --- */
+.fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+.fade-in-right { opacity: 0; animation: fadeInRight 1s ease-out 0.5s forwards; }
 
-/* MOBILE RESPONSIVE */
+.slide-in-1 { opacity: 0; animation: slideInLeft 0.6s ease-out 0.2s forwards; }
+.slide-in-2 { opacity: 0; animation: slideInLeft 0.6s ease-out 0.4s forwards; }
+.slide-in-3 { opacity: 0; animation: slideInLeft 0.6s ease-out 0.6s forwards; }
+.slide-in-4 { opacity: 0; animation: slideInLeft 0.6s ease-out 0.8s forwards; }
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes fadeInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+
+/* --- MOBILE RESPONSIVE FIX (Combined & Cleaned) --- */
 @media screen and (max-width: 960px) {
     .contact-container {
-        flex-direction: column; /* Stack vertically */
-        margin-top: 20px;
+        grid-template-columns: 1fr;
+        margin-top: 0;
+        gap: 20px;
     }
 
-    .contact-header {
-        padding-bottom: 20px;
+    .map-wrapper {
+        min-height: 350px;
     }
 
-    .contact-info, .contact-form-wrapper {
-        padding: 30px 20px;
+    /* 1. CARD ADJUSTMENTS FOR MOBILE */
+    .info-card {
+        padding: 20px 15px; 
+        align-items: flex-start; /* Align contents to top (important for wrapping text) */
     }
-}
 
-/* Add this to your Contact.css */
+    /* Disable Desktop Hover Effects */
+    .info-card:hover {
+        transform: none !important;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05) !important;
+        border-left: 5px solid transparent !important;
+    }
 
-.link-item {
-    text-decoration: none; /* Removes underline */
-    color: inherit;        /* Keeps your original text color */
-    cursor: pointer;       /* Shows hand icon on hover */
-    display: flex;         /* Maintains layout structure */
-    flex-direction: column;
-}
+    /* 2. ICON ADJUSTMENTS (Remove Circle & Align) */
+    .icon-box {
+        background: transparent !important; /* Remove circle background */
+        width: auto !important;
+        height: auto !important;
+        border-radius: 0 !important;
+        padding-right: 15px;
+        
+        /* FIX FOR ICON ALIGNMENT: 
+           Pushes the icon down slightly to align with the Title text */
+        margin-top: 2px; 
+    }
 
-.link-item:hover {
-    opacity: 0.8;          /* Optional: Slight fade effect on hover */
-    color: #007bff;        /* Optional: Change color on hover to indicate it's clickable */
+    .icon-box i {
+        font-size: 1.6rem; /* Size of the bare icon */
+    }
+
+    /* 3. TEXT OVERFLOW FIXES */
+    .card-text {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .card-text p, .card-text h3 {
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        max-width: 100%;
+    }
+    
+    .card-text h3 {
+        margin-bottom: 2px; /* Tighter spacing on mobile */
+    }
+
+    /* 4. LINKS ALWAYS VISIBLE */
+    .cta-link {
+        opacity: 1; 
+        transform: translateX(0);
+        margin-top: 8px; /* Extra space for finger tapping */
+    }
 }
