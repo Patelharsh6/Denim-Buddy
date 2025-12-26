@@ -6,11 +6,11 @@ import './About.css';
 
 // Import images (Ensure paths match your project structure)
 import aboutHero from '../assets/hero/animation-1.jpg'; 
-import storyImg from '../assets/hero/animation-1.jpg'; // Image for Story section
+import storyImg from '../assets/hero/story1.jpg'; // Image for Story section
 import factoryImg from '../assets/hero/animation-1.jpg'; // For Grid
 import stitchingImg from '../assets/hero/animation-1.jpg'; // For Grid
-import img1 from '../assets/hero/animation-1.jpg'; // For Grid
-import img2 from '../assets/hero/animation-1.jpg'; // For Grid
+import img1 from '../assets/hero/grid1.jpg'; // For Grid
+import img2 from '../assets/hero/grid2.jpg'; // For Grid
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -166,7 +166,7 @@ const About = () => {
                                             <div className="grid-row">
                                                 <div className="grid-box red-box">
                                                     <h3>200+</h3>
-                                                    <p>Global Retail Partners</p>
+                                                    <p>Partners</p>
                                                 </div>
                                                 <div className="grid-box img-box">
                                                     <img src={stitchingImg} alt="Stitching Detail" />
@@ -177,6 +177,33 @@ const About = () => {
 
                     </div>
             </section>
+
+
+            {/* --- GLOBAL REACH SECTION --- */}
+            <section className="about-section reverse">
+                
+                <div className="about-content">
+                    <span className="section-subtitle">LOCAL ROOTS</span>
+                    <h2>Global Reach.</h2>
+                    <p>
+                        Denim Buddy is more than a local brand; we are a global denim exporter. 
+                        Shipping direct from our Gujarat hub to retail partners worldwide, we carry the 
+                        <strong> "Make in India"</strong> spirit into every wardrobe.
+                    </p>
+                    <p>
+                        Our advanced laundry techniques and sustainable processes ensure that our denim 
+                        doesn't just look good—it’s built to last.
+                    </p>
+                    
+                    {/* Optional: Visual List for the features mentioned */}
+                    <ul className="about-list">
+                        <li><i className="fas fa-globe-asia"></i> Exporting Worldwide</li>
+                        <li><i className="fas fa-water"></i> Advanced Laundry Techniques</li>
+                        <li><i className="fas fa-leaf"></i> Sustainable Processes</li>
+                    </ul>
+                </div>
+            </section>
+
 
             {/* --- 5. MISSION & CTA --- */}
             <section className="mission-section">

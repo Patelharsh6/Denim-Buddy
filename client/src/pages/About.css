@@ -363,3 +363,111 @@
     text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     z-index: 2;
 }
+
+
+
+/* --- SECTION LAYOUT (Split) --- */
+.about-section {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    gap: 70px;
+}
+
+/* This flips the image to the left and text to the right */
+.about-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-content {
+    flex: 1;
+}
+
+/* --- TYPOGRAPHY --- */
+.section-subtitle {
+    display: block;
+    font-size: 0.85rem;
+    color: #3a86ff; /* Brand Blue */
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.about-content h2 {
+    font-size: 2.8rem;
+    color: #0f172a; /* Dark Navy */
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+}
+
+.about-content p {
+    color: #64748b;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* --- IMAGE WRAPPER --- */
+.about-image-wrapper {
+    flex: 1;
+    height: 500px; /* Fixed height for consistency */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.about-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.about-image-wrapper:hover img {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* --- LIST STYLES (Optional) --- */
+.about-list {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.about-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #334155;
+    font-weight: 600;
+}
+
+.about-list i {
+    color: #3a86ff;
+    font-size: 1.1rem;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media screen and (max-width: 960px) {
+    .about-section, 
+    .about-section.reverse {
+        flex-direction: column; /* Stack vertically on mobile */
+        gap: 40px;
+        text-align: center;
+    }
+
+    .about-image-wrapper {
+        width: 100%;
+        height: 350px;
+    }
+
+    .about-list li {
+        justify-content: center; /* Center list items on mobile */
+    }
+}
