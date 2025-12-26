@@ -12,7 +12,7 @@ const Contact = () => {
     const emailAddress = "Swastikapparelofficial@gmail.com";
     const phoneNumber = "+91 88666 10616"; 
     const whatsappNumber = "918866610616"; // Clean format for API
-    const mapLink = "https://maps.google.com/?q=29,+Ground+Floor,+Laxmi+Vishnu+Market,+Nr.+Gheekanta+Metro+Station,+Gheekanta,+Ahmedabad,+Gujarat-+380001";
+    const mapLink = "https://maps.app.goo.gl/AE4UhXSaPSfooNgy7?g_st=iw";
 
     return (
         <div className="contact-page">

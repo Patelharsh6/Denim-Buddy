@@ -6,7 +6,7 @@ import logo from '../assets/logo.png';
 const Footer = () => {
     const emailAddress = "Swastikapparelofficial@gmail.com";
     const phoneNumber = "+91 88666 10616"; 
-    const mapLink = "https://maps.google.com/?q=29,+Ground+Floor,+Laxmi+Vishnu+Market,+Nr.+Gheekanta+Metro+Station,+Gheekanta,+Ahmedabad,+Gujarat-+380001"; // Ensure this link is valid
+    const mapLink = "https://maps.app.goo.gl/AE4UhXSaPSfooNgy7?g_st=iw"; // Ensure this link is valid
 
     return (
         <footer className="footer">

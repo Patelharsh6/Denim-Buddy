@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Home.css';
 import HeroSlider from '../components/HeroSlider';
+import SEO from '../components/SEO';
 
 // Import images
 import img1 from '../assets/hero/productsold.jpg'; 
@@ -44,6 +45,13 @@ const Home = () => {
 
     return (
         <div className="home-page">
+
+
+            <SEO 
+                title="Best Jeans Manufacturer in India"
+                description="Denim Buddy is a top-rated Men's Denim Manufacturer in Ahmedabad. We offer wholesale jeans, private labeling, and factory-direct pricing with 50k+ capacity."
+                keywords="Jeans manufacturer India, Denim factory Ahmedabad, Wholesale jeans supplier"
+            />
             
             {/* 1. HERO SLIDER */}
             <HeroSlider />
