@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
 import './Wholesale.css';
+import SEO from '../components/SEO';
 
 // Import images
 import heroBg from '../assets/hero/animation-1.jpg'; 
@@ -42,6 +43,13 @@ const Wholesale = () => {
 
     return (
         <div className="wholesale-page">
+
+            <SEO 
+                title="Wholesale Jeans Suppliers & Private Label Manufacturing | B2B Partner"
+                description="Partner with Denim Buddy for high-margin wholesale jeans. Low MOQs, global export from India, and white-label manufacturing services for retail brands."
+                keywords="Wholesale jeans suppliers, Bulk denim for retailers, White label jeans manufacturer, Private label denim India, Export quality jeans, B2B denim partnership"
+                url="https://denimbuddy.com/wholesale"
+            />
             
             {/* --- 1. HERO SECTION --- */}
             <header className="ws-hero">

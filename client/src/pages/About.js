@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom'; 
 import './About.css';
+import SEO from '../components/SEO';
 
 // Import images (Ensure paths match your project structure)
 import aboutHero from '../assets/hero/animation-1.jpg'; 
@@ -55,6 +56,14 @@ const About = () => {
     return (
         <div className="about-page">
             
+            <SEO 
+                title="About Us | Vertical Denim Manufacturing Factory in Ahmedabad"
+                description="Tour the Denim Buddy factory. We are a vertically integrated denim manufacturer in Gujarat with zero-defect quality control and sustainable laundry processes."
+                keywords="Vertical denim manufacturing, Sustainable jeans factory, Denim production process, Ahmedabad textile industry, Jeans stitching unit, Denim washing plant India"
+                url="https://denimbuddy.com/about"
+                schemaType="AboutPage"
+            />
+
             {/* --- 1. HERO SECTION --- */}
             <div className="about-header">
                 <div className="about-overlay"></div>

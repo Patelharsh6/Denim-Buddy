@@ -48,10 +48,11 @@ const Home = () => {
 
 
             <SEO 
-                title="Best Jeans Manufacturer in India"
-                description="Denim Buddy is a top-rated Men's Denim Manufacturer in Ahmedabad. We offer wholesale jeans, private labeling, and factory-direct pricing with 50k+ capacity."
-                keywords="Jeans manufacturer India, Denim factory Ahmedabad, Wholesale jeans supplier"
-            />
+            title="Denim Buddy | #1 Men's Denim Manufacturer in India (Factory Direct)"
+            description="Looking for a premium jeans manufacturer? Denim Buddy in Ahmedabad offers 50k+ monthly capacity, private label services, and factory-direct wholesale pricing."
+            keywords="Jeans manufacturer India, Denim factory Ahmedabad, Men's jeans wholesale, Private label denim India, Bulk jeans supplier, Denim manufacturing company Gujarat"
+            url="https://denimbuddy.com/"
+        />
             
             {/* 1. HERO SLIDER */}
             <HeroSlider />
