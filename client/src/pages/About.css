@@ -1,11 +1,12 @@
 /* =========================================
-   1. PAGE LAYOUT & TYPOGRAPHY
+   1. GLOBAL SETTINGS
    ========================================= */
 .about-page {
     width: 100%;
     background-color: #ffffff;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
+    color: #334155;
 }
 
 /* =========================================
@@ -13,12 +14,11 @@
    ========================================= */
 .about-header {
     position: relative;
-    height: 60vh; /* Takes 60% of screen height */
-    /* Ensure this path is correct for your project */
-    background-image: url('../assets/hero/animation-1.jpg'); 
+    height: 65vh;
+    background-image: url('../assets/hero/animation-1.jpg'); /* Verify path */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Parallax effect */
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,43 +28,50 @@
 
 .about-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(15, 23, 42, 0.75); /* Dark Navy Overlay */
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.8); /* Dark Navy Overlay */
 }
 
 .about-header-content {
     position: relative;
     z-index: 2;
     padding: 20px;
-    max-width: 800px;
+    max-width: 900px;
+}
+
+.hero-subtitle {
+    display: block;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #3a86ff;
+    margin-bottom: 15px;
 }
 
 .about-header h1 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: 800;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
     font-family: 'Playfair Display', serif;
+    line-height: 1.2;
 }
 
 .accent-bar {
     width: 80px;
     height: 4px;
     background: #3a86ff;
-    margin: 0 auto 20px;
+    margin: 0 auto 25px;
 }
 
 .about-header p {
     font-size: 1.2rem;
-    color: #cbd5e1;
+    color: #e2e8f0;
     font-weight: 300;
 }
 
 /* =========================================
-   3. STANDARD SECTIONS (Split Layout)
+   3. THE STORY (Split Layout)
    ========================================= */
 .about-section {
     display: flex;
@@ -72,16 +79,10 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 100px 20px;
-    gap: 60px;
+    gap: 70px;
 }
 
-.about-section.reverse {
-    flex-direction: row-reverse; /* Swaps Image/Text sides */
-}
-
-.about-content {
-    flex: 1;
-}
+.about-content { flex: 1; }
 
 .section-subtitle {
     display: block;
@@ -94,25 +95,24 @@
 }
 
 .about-content h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: #0f172a;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-family: 'Playfair Display', serif;
-    line-height: 1.2;
 }
 
 .about-content p {
     color: #64748b;
     line-height: 1.8;
     margin-bottom: 20px;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
 }
 
 .about-image-wrapper {
     flex: 1;
-    height: 450px;
+    height: 500px;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 4px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
@@ -120,303 +120,203 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.7s ease;
 }
 
-.about-image-wrapper:hover img {
-    transform: scale(1.05);
-}
-
-.about-list {
-    list-style: none;
-    margin-top: 20px;
-}
-
-.about-list li {
-    margin-bottom: 12px;
-    font-size: 1.1rem;
-    color: #334155;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.about-list i {
-    color: #3a86ff;
-}
+.about-image-wrapper:hover img { transform: scale(1.05); }
 
 /* =========================================
-   4. THE PROOF SANDWICH (Stats & Grid)
+   4. VERTICAL ADVANTAGE (Features)
+   ========================================= */
+.vertical-advantage {
+    background-color: #f8fafc;
+    padding: 100px 20px;
+}
+
+.va-container { max-width: 1200px; margin: 0 auto; }
+
+.section-header-left {
+    margin-bottom: 50px;
+    max-width: 700px;
+}
+
+.section-header-left h2 {
+    font-size: 2.8rem;
+    color: #0f172a;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+}
+
+.section-desc { font-size: 1.1rem; line-height: 1.7; color: #64748b; }
+
+.adv-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.adv-feature {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.adv-feature:hover {
+    transform: translateY(-5px);
+    border-left: 4px solid #3a86ff;
+}
+
+.adv-icon {
+    font-size: 2rem;
+    color: #3a86ff;
+    margin-bottom: 20px;
+}
+
+.adv-feature h3 {
+    font-size: 1.4rem;
+    color: #0f172a;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.adv-feature p { color: #64748b; line-height: 1.6; }
+
+/* =========================================
+   5. THE PROOF SECTION (Stats + Grid)
    ========================================= */
 .proof-section {
-    background-color: #f8fafc; /* Light grey background */
     padding: 100px 20px;
+    background-color: #ffffff;
 }
 
 .stats-container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Desktop: Side by Side */
+    grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
 }
 
-/* Left Side: Stats Text */
+/* Left: Stats */
 .stats-text h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: #0f172a;
-    margin-bottom: 20px;
     font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
 }
 
-.stats-desc {
-    color: #64748b;
-    margin-bottom: 40px;
-    line-height: 1.6;
-}
+.stats-desc { color: #64748b; margin-bottom: 40px; line-height: 1.6; }
 
-.stat-item {
-    margin-bottom: 25px;
-}
+.stat-item { margin-bottom: 25px; }
+.stat-label { display: flex; justify-content: space-between; font-weight: 700; color: #1a365d; margin-bottom: 8px; }
+.stat-bar-bg { width: 100%; height: 6px; background-color: #e2e8f0; border-radius: 3px; overflow: hidden; }
+.stat-bar-fill { height: 100%; background-color: #3a86ff; border-radius: 3px; }
 
-.stat-label {
-    display: flex;
-    justify-content: space-between;
-    font-weight: 700;
-    color: #1a365d;
-    margin-bottom: 8px;
-}
-
-.stat-bar-bg {
-    width: 100%;
-    height: 6px;
-    background-color: #e2e8f0;
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.stat-bar-fill {
-    height: 100%;
-    background-color: #3a86ff; /* Brand Blue */
-    border-radius: 3px;
-}
-
-/* Right Side: The 2x2 Grid (DESKTOP) */
+/* Right: The Grid (Desktop) */
 .proof-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 Columns */
-    grid-template-rows: 250px 250px; /* Fixed Height */
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 250px 250px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
-/* Generic Block Style */
-.grid-block {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
+.grid-block { position: relative; width: 100%; height: 100%; overflow: hidden; }
 
 /* Image Blocks */
 .img-block img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(20%);
-    transition: 0.3s;
+    width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: 0.3s;
 }
-.img-block:hover img {
-    filter: grayscale(0%);
-    transform: scale(1.05);
+.img-block:hover img { filter: grayscale(0%); transform: scale(1.05); }
+
+.box-overlay-text {
+    position: absolute; bottom: 20px; left: 20px; right: 20px;
+    color: white; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    font-size: 0.9rem; z-index: 2;
 }
 
-/* Blue Text Blocks */
+/* Blue Blocks */
 .blue-block {
-    background-color: #1a365d; /* Dark Navy */
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    transition: 0.3s;
+    background-color: #1a365d; color: white;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; padding: 20px; transition: 0.3s;
 }
-
-.blue-block:hover {
-    background-color: #3a86ff; /* Brand Blue on hover */
-    z-index: 2;
-}
-
-.blue-block h3 {
-    font-size: 2.5rem;
-    margin-bottom: 5px;
-    font-family: 'Playfair Display', serif;
-}
-
-.blue-block p {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.9;
-}
+.blue-block:hover { background-color: #3a86ff; z-index: 2; }
+.blue-block h3 { font-size: 2.8rem; margin-bottom: 5px; font-family: 'Playfair Display', serif; }
+.blue-block p { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; }
 
 /* =========================================
-   5. THE ADVANTAGE SECTION (Blue Cards)
+   6. MISSION SECTION
    ========================================= */
-.advantage-section {
+.mission-section {
     padding: 100px 20px;
-    background-color: #ffffff;
+    background-color: #f1f5f9;
     text-align: center;
 }
 
-.advantage-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+.mission-content { max-width: 800px; margin: 0 auto; }
 
-.section-header h2 {
+.mission-icon { font-size: 2rem; color: #cbd5e1; margin-bottom: 20px; }
+
+.mission-content h2 {
     font-size: 2.5rem;
-    color: #1a365d;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-}
-
-.accent-bar-small {
-    width: 60px;
-    height: 4px;
-    background: #3a86ff;
-    margin: 0 auto 20px;
-}
-
-.section-header p {
-    color: #64748b;
-    max-width: 700px;
-    margin: 0 auto 60px;
-    font-size: 1.1rem;
-}
-
-.advantage-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.advantage-card {
-    background: linear-gradient(135deg, #1a365d 0%, #1e40af 100%);
-    padding: 50px 30px;
-    border-radius: 8px;
-    color: white;
-    box-shadow: 0 15px 30px rgba(26, 54, 93, 0.2);
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.advantage-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(58, 134, 255, 0.3);
-}
-
-.card-icon {
-    font-size: 3.5rem;
-    margin-bottom: 25px;
-    color: white;
-}
-
-.advantage-card h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    text-transform: uppercase;
+    color: #0f172a;
+    font-family: 'Playfair Display', serif;
     margin-bottom: 20px;
+    letter-spacing: 1px;
 }
 
-.card-divider {
-    width: 50px;
-    height: 3px;
-    background-color: #3a86ff;
-    margin-bottom: 20px;
-}
+.mission-text { font-size: 1.3rem; color: #475569; line-height: 1.6; margin-bottom: 40px; font-style: italic; }
 
-.advantage-card p {
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    opacity: 0.9;
-}
+.cta-divider { width: 60px; height: 3px; background-color: #3a86ff; margin: 0 auto 40px; }
 
-/* CTA Button */
-.advantage-cta { margin-top: 20px; }
+.mission-content h3 { font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 10px; color: #1a365d; }
+.cta-sub { color: #64748b; margin-bottom: 40px; }
 
-.btn-main {
-    padding: 16px 45px;
-    background-color: #3a86ff;
-    color: white;
-    font-weight: 800;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 10px 20px rgba(58, 134, 255, 0.2);
-}
+.mission-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 
-.btn-main:hover {
-    background-color: #1a365d;
-    transform: translateY(-2px);
+.btn-dark {
+    padding: 16px 40px; background-color: #0f172a; color: white;
+    font-weight: 700; text-decoration: none; border-radius: 4px; transition: 0.3s;
 }
+.btn-dark:hover { background-color: #3a86ff; transform: translateY(-3px); }
+
+.btn-outline-dark {
+    padding: 16px 40px; background-color: transparent; border: 2px solid #0f172a; color: #0f172a;
+    font-weight: 700; text-decoration: none; border-radius: 4px; transition: 0.3s;
+}
+.btn-outline-dark:hover { background-color: #0f172a; color: white; transform: translateY(-3px); }
 
 /* =========================================
-   6. MOBILE RESPONSIVENESS (The Critical Fix)
+   7. RESPONSIVE FIXES (MOBILE)
    ========================================= */
 @media screen and (max-width: 960px) {
-    
-    /* Hero */
     .about-header h1 { font-size: 2.2rem; }
+    
+    .about-section { flex-direction: column; gap: 40px; text-align: center; padding: 60px 20px; }
+    .about-image-wrapper { height: 350px; width: 100%; }
 
-    /* Layout: Stack everything */
-    .about-section, 
-    .about-section.reverse {
-        flex-direction: column;
-        gap: 40px;
-        text-align: center;
-        padding: 60px 20px;
-    }
+    .stats-container { grid-template-columns: 1fr; gap: 50px; }
 
-    /* Stats Container */
-    .stats-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    /* --- THE FIX FOR THE 2x2 GRID --- */
-    /* Forces the grid into a single column stack on mobile */
+    /* FORCE GRID TO STACK ON MOBILE */
     .proof-grid {
         display: grid !important;
-        grid-template-columns: 1fr !important; /* 1 Column */
-        grid-template-rows: repeat(4, 300px) !important; /* 4 Rows of fixed height */
-        width: 100% !important;
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(4, 280px) !important;
         height: auto !important;
     }
 
-    /* Ensure Blue Blocks look good on mobile */
-    .blue-block {
-        padding: 10px !important;
-    }
-    .blue-block h3 {
-        font-size: 2.5rem !important; /* Make number readable */
-    }
-
-    /* Advantage Cards */
-    .advantage-grid {
-        grid-template-columns: 1fr;
-        padding: 0 10px;
-    }
+    .blue-block h3 { font-size: 2.5rem !important; }
+    .box-overlay-text { font-size: 1rem; }
+    
+    .adv-features-grid { grid-template-columns: 1fr; }
+    .mission-buttons { flex-direction: column; width: 100%; }
+    .btn-dark, .btn-outline-dark { width: 100%; text-align: center; }
 }
+
 
 
 /* Grid Wrapper (The 4 Boxes) */
