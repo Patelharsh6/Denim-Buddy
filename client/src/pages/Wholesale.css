@@ -1,40 +1,37 @@
-/* --- PAGE CONTAINER --- */
+/* =========================================
+   1. GLOBAL & HERO
+   ========================================= */
 .wholesale-page {
     width: 100%;
     background-color: #ffffff;
     font-family: 'Inter', sans-serif;
+    color: #334155;
 }
 
-/* --- HERO SECTION --- */
 .ws-hero {
     position: relative;
-    height: 70vh; /* Takes up 70% of screen height */
-    min-height: 500px;
-    background-image: url('../assets/hero/animation-1.jpg'); /* Ensure path is correct */
+    height: 60vh;
+    background-image: url('../assets/hero/animation-1.jpg'); /* Verify path */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Parallax */
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    padding: 0 20px;
 }
 
 .ws-hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(15, 23, 42, 0.75); /* Dark Navy Overlay */
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.85); /* Deep Navy Overlay */
 }
 
 .ws-hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    padding: 20px;
 }
 
 .ws-subtitle {
@@ -44,7 +41,6 @@
     font-weight: 700;
     color: #3a86ff;
     margin-bottom: 20px;
-    text-transform: uppercase;
 }
 
 .ws-hero-content h1 {
@@ -55,14 +51,183 @@
     line-height: 1.2;
 }
 
-.ws-pitch {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    color: #cbd5e1;
-    margin-bottom: 40px;
+.ws-accent-bar {
+    width: 80px;
+    height: 4px;
+    background: #3a86ff;
+    margin: 0 auto;
 }
 
-/* Reuse your primary button style */
+/* =========================================
+   2. THE PITCH SECTION
+   ========================================= */
+.pitch-section {
+    padding: 100px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.pitch-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pitch-container h2 {
+    font-size: 1rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.pitch-text {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: #0f172a;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+}
+
+.highlight-text {
+    color: #3a86ff;
+    font-weight: 700;
+}
+
+/* =========================================
+   3. BENEFITS SECTION
+   ========================================= */
+.benefits-section {
+    padding: 100px 20px;
+    background-color: #f8fafc;
+}
+
+.ws-container { max-width: 1200px; margin: 0 auto; }
+
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-header h2 {
+    font-size: 2.5rem; color: #0f172a; margin-bottom: 15px; font-family: 'Playfair Display', serif;
+}
+.section-header p { color: #64748b; font-size: 1.1rem; }
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.benefit-card {
+    background: white;
+    padding: 50px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    border-bottom: 3px solid #3a86ff;
+}
+
+.card-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #f1f5f9;
+    z-index: 0;
+}
+
+.icon-circle {
+    width: 70px; height: 70px;
+    background: #eff6ff; color: #3a86ff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; margin: 0 auto 25px;
+    position: relative; z-index: 1;
+}
+
+.benefit-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #0f172a;
+    position: relative; z-index: 1;
+}
+
+.benefit-card p {
+    color: #64748b;
+    line-height: 1.6;
+    position: relative; z-index: 1;
+}
+
+/* =========================================
+   4. VISUAL SPLIT SECTION
+   ========================================= */
+.partner-visual-section {
+    padding: 0;
+    background: #ffffff;
+}
+
+.split-container {
+    display: flex;
+    max-width: 100%;
+    min-height: 600px;
+}
+
+.visual-image {
+    width: 50%;
+    position: relative;
+}
+
+.visual-image img {
+    width: 100%; height: 100%; object-fit: cover;
+}
+
+.visual-text {
+    width: 50%;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #0f172a; /* Dark Navy Background */
+    color: white;
+}
+
+.visual-text h3 {
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+}
+
+.visual-text p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.visual-list { list-style: none; }
+.visual-list li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.visual-list i {
+    color: #3a86ff;
+    font-size: 1.2rem;
+    margin-top: 4px;
+}
+
+.visual-list strong { color: white; }
+.visual-list div { color: #cbd5e1; font-size: 1rem; }
+
+.visual-cta { margin-top: 40px; }
+
 .btn-primary {
     padding: 15px 40px;
     background-color: #3a86ff;
@@ -76,227 +241,26 @@
 }
 
 .btn-primary:hover {
-    background-color: #2563eb;
+    background-color: #ffffff;
+    color: #0f172a;
     transform: translateY(-3px);
 }
 
-/* --- BENEFITS SECTION --- */
-.benefits-section {
-    padding: 100px 20px;
-    background-color: #f8fafc;
-}
-
-.ws-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Header styles reused from Home */
-.section-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-.section-header h2 {
-    font-size: 2.5rem;
-    color: #0f172a;
-    font-family: 'Playfair Display', serif;
-}
-.accent-line {
-    width: 60px;
-    height: 4px;
-    background: #3a86ff;
-    margin: 15px auto 20px;
-}
-
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-.benefit-card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    text-align: center;
-    transition: 0.3s ease;
-}
-
-.benefit-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(58, 134, 255, 0.1);
-}
-
-.icon-circle {
-    width: 70px;
-    height: 70px;
-    background: #eff6ff;
-    color: #3a86ff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    margin: 0 auto 25px;
-}
-
-.benefit-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    color: #0f172a;
-}
-
-.benefit-card p {
-    color: #64748b;
-    line-height: 1.6;
-}
-
-/* --- SPLIT VISUAL SECTION --- */
-.partner-visual-section {
-    padding: 0;
-    background: #0f172a; /* Dark background */
-    color: white;
-}
-
-.split-container {
-    display: flex;
-    max-width: 100%;
-}
-
-.visual-image, .visual-text {
-    width: 50%;
-}
-
-.visual-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    min-height: 500px;
-    filter: grayscale(30%);
-}
-
-.visual-text {
-    padding: 80px 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.visual-text h3 {
-    font-size: 2.5rem;
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 20px;
-}
-
-.visual-text p {
-    font-size: 1.1rem;
-    color: #cbd5e1;
-    margin-bottom: 30px;
-    line-height: 1.8;
-}
-
-.visual-list {
-    list-style: none;
-}
-
-.visual-list li {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.visual-list i {
-    color: #3a86ff;
-}
-
-/* --- INQUIRY FORM SECTION --- */
-.inquiry-section {
-    padding: 100px 20px;
-    background: white;
-}
-
-.inquiry-container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: #ffffff;
-    padding: 50px;
-    border-radius: 16px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-    border: 1px solid #e2e8f0;
-}
-
-.form-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.form-header h2 { font-size: 2rem; color: #0f172a; margin-bottom: 10px; }
-.form-header p { color: #64748b; }
-
-.ws-form .form-row {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #334155;
-    font-size: 0.9rem;
-}
-
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-family: 'Inter', sans-serif;
-    transition: 0.3s;
-}
-
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: #3a86ff;
-    box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.1);
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 15px;
-    background-color: #0f172a;
-    color: white;
-    border: none;
-    font-weight: 700;
-    font-size: 1.1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.submit-btn:hover {
-    background-color: #3a86ff;
-}
-
-/* --- RESPONSIVE --- */
+/* =========================================
+   5. RESPONSIVE
+   ========================================= */
 @media screen and (max-width: 960px) {
     .ws-hero-content h1 { font-size: 2.5rem; }
     
+    .pitch-text { font-size: 1.4rem; }
+
     .split-container { flex-direction: column; }
     .visual-image, .visual-text { width: 100%; }
-    .visual-image { height: 300px; }
-    .visual-text { padding: 50px 25px; }
-
-    .ws-form .form-row { flex-direction: column; gap: 0; }
-    .inquiry-container { padding: 30px 20px; }
+    .visual-image { height: 350px; }
+    .visual-text { padding: 50px 25px; text-align: center; }
+    
+    .visual-list li {
+        justify-content: center; /* Center list items on mobile */
+        text-align: left;
+    }
 }

@@ -49,7 +49,7 @@ const Footer = () => {
 
                 {/* Column 3: Contact (FIXED REDIRECTION) */}
                 <div className="footer-col">
-                    <h4>Headquarters</h4>
+                    <h4>Office</h4>
                     <ul className="contact-list">
                         <li>
                             <a 

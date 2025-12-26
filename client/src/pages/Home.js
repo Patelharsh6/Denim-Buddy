@@ -8,6 +8,9 @@ import HeroSlider from '../components/HeroSlider';
 import img1 from '../assets/hero/productsold.jpg'; 
 import img2 from '../assets/hero/fit-image.jpg';
 import img3 from '../assets/hero/yourstyle.jpg';
+import aboutHero from '../assets/hero/yourstyle.jpg';
+import factoryImg from '../assets/hero/yourstyle.jpg';
+import stitchingImg from '../assets/hero/yourstyle.jpg';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -60,59 +63,34 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* 3. FUN FACTS (Stacked: Text Top -> Grid Bottom) */}
-            <section className="fun-facts-section">
-                <div className="single-column-container">
-                    
-                    {/* Part A: Text & Progress Bars */}
-                    <div className="facts-text-col">
-                        <div className="about-decoration"><span className="deco-arrow">➳</span></div>
-                        <h4 className="about-subtitle">FUN FACTS</h4>
-                        <h2 className="about-title">Our Numbers Speak About Everything</h2>
-                        <p className="about-text">
-                            There are many variations of passages available, but our commitment to quality remains constant.
-                        </p>
-
-                        <div className="progress-group">
-                            <div className="progress-wrapper">
-                                <div className="p-label"><span>Ankle Fit</span><span>88%</span></div>
-                                <div className="p-bar"><div className="p-fill" style={{width: '88%'}}></div></div>
-                            </div>
-                            <div className="progress-wrapper">
-                                <div className="p-label"><span>Narrow Fit</span><span>60%</span></div>
-                                <div className="p-bar"><div className="p-fill" style={{width: '60%'}}></div></div>
-                            </div>
-                            <div className="progress-wrapper">
-                                <div className="p-label"><span>Comfort Fit</span><span>75%</span></div>
-                                <div className="p-bar"><div className="p-fill" style={{width: '75%'}}></div></div>
-                            </div>
+            {/* --- AUTO SCROLLING GALLERY --- */}
+            <section className="auto-scroll-section">
+                <div className="scroll-container">
+                    <div className="scroll-track">
+                        
+                        {/* FIRST SET OF IMAGES */}
+                        <div className="scroll-card">
+                            <img src={aboutHero} alt="Production 1" />
                         </div>
+                        <div className="scroll-card">
+                            <img src={factoryImg} alt="Production 2" />
+                        </div>
+                        <div className="scroll-card">
+                            <img src={stitchingImg} alt="Production 3" />
+                        </div>
+
+                        {/* DUPLICATE SET (Required for Seamless Loop) */}
+                        <div className="scroll-card">
+                            <img src={aboutHero} alt="Production 1" />
+                        </div>
+                        <div className="scroll-card">
+                            <img src={factoryImg} alt="Production 2" />
+                        </div>
+                        <div className="scroll-card">
+                            <img src={stitchingImg} alt="Production 3" />
+                        </div>
+
                     </div>
-
-                    {/* Part B: The 2x2 Grid (Placed Below Text) */}
-                    <div className="facts-grid-wrapper">
-                        <div className="grid-row">
-                            <div className="grid-box img-box">
-                                <img src={img1} alt="Product Sold" />
-                                <span className="box-overlay-text">Product Sold</span>
-                            </div>
-                            <div className="grid-box red-box">
-                                <h3>10000+</h3>
-                                <p>Designs</p>
-                            </div>
-                        </div>
-                        <div className="grid-row">
-                            <div className="grid-box red-box">
-                                <h3>200+</h3>
-                                <p>Client</p>
-                            </div>
-                            <div className="grid-box img-box">
-                                <img src={img2} alt="Perfect Fit" />
-                                <span className="box-overlay-text">Perfect Fit</span>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </section>
 

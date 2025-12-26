@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Link } from 'react-router-dom';
 import './Wholesale.css';
 
-// Import images (Reuse your existing assets)
-import heroBg from '../assets/hero/animation-1.jpg'; // Darker/Industrial image works best here
-import partnerImg from '../assets/hero/animation-1.jpg'; 
+// Import images
+import heroBg from '../assets/hero/animation-1.jpg'; 
+import partnerImg from '../assets/hero/partnerImg.jpg'; 
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,38 +15,27 @@ const Wholesale = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
 
-        // 1. Hero Text Animation
+        // 1. Hero Animation
         gsap.from(".ws-hero-content", {
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out",
-            delay: 0.2
+            y: 50, opacity: 0, duration: 1, ease: "power3.out", delay: 0.2
         });
 
-        // 2. Benefits Grid Animation (Staggered)
+        // 2. The Pitch Animation
+        gsap.from(".pitch-container", {
+            scrollTrigger: { trigger: ".pitch-section", start: "top 80%" },
+            y: 30, opacity: 0, duration: 1, ease: "power2.out"
+        });
+
+        // 3. Benefits Cards
         gsap.from(".benefit-card", {
-            scrollTrigger: {
-                trigger: ".benefits-section",
-                start: "top 80%",
-            },
-            y: 50,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: "back.out(1.7)"
+            scrollTrigger: { trigger: ".benefits-section", start: "top 75%" },
+            y: 50, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power2.out"
         });
 
-        // 3. Form Section Animation
-        gsap.from(".inquiry-container", {
-            scrollTrigger: {
-                trigger: ".inquiry-section",
-                start: "top 75%",
-            },
-            y: 30,
-            opacity: 0,
-            duration: 1,
-            ease: "power2.out"
+        // 4. Visual Section
+        gsap.from(".visual-text", {
+            scrollTrigger: { trigger: ".partner-visual-section", start: "top 75%" },
+            x: 30, opacity: 0, duration: 1, ease: "power2.out"
         });
 
     }, []);
@@ -53,49 +43,52 @@ const Wholesale = () => {
     return (
         <div className="wholesale-page">
             
-            {/* --- HERO SECTION --- */}
+            {/* --- 1. HERO SECTION --- */}
             <header className="ws-hero">
                 <div className="ws-hero-overlay"></div>
                 <div className="ws-hero-content">
                     <span className="ws-subtitle">B2B PARTNERSHIPS</span>
-                    <h1>Partner With a Leading Industry Player.</h1>
-                    <p className="ws-pitch">
-                        Are you looking to stock high-quality men's denim? Denim Buddy offers the 
-                        infrastructure of a global manufacturer with the soul of a designer brand.
-                    </p>
-                    <button className="btn-primary" onClick={() => document.getElementById('inquiry-form').scrollIntoView({ behavior: 'smooth' })}>
-                        Become A Partner
-                    </button>
+                    <h1>Partner With a Leading<br/>Industry Player.</h1>
+                    <div className="ws-accent-bar"></div>
                 </div>
             </header>
 
-            {/* --- BENEFITS SECTION --- */}
+            {/* --- 2. THE PITCH (High Impact Typography) --- */}
+            <section className="pitch-section">
+                <div className="pitch-container">
+                    <h2>The Denim Buddy Standard</h2>
+                    <p className="pitch-text">
+                        "Are you looking to stock high-quality men's denim? 
+                        <span className="highlight-text"> Denim Buddy</span> offers the infrastructure of a 
+                        global manufacturer with the soul of a designer brand."
+                    </p>
+                </div>
+            </section>
+
+            {/* --- 3. BENEFITS GRID --- */}
             <section className="benefits-section">
                 <div className="ws-container">
                     <div className="section-header">
-                        <h2>Why Stock Denim Buddy?</h2>
-                        <div className="accent-line"></div>
+                        <h2>Wholesale Benefits</h2>
                         <p>We provide the stability and margins your retail business needs to grow.</p>
                     </div>
 
                     <div className="benefits-grid">
                         {/* Benefit 1 */}
                         <div className="benefit-card">
-                            <div className="icon-circle">
-                                <i className="fas fa-tags"></i>
-                            </div>
+                            <div className="card-number">01</div>
+                            <div className="icon-circle"><i className="fas fa-tags"></i></div>
                             <h3>Manufacturer Pricing</h3>
                             <p>
-                                Cut out the middlemen. Get factory-direct rates that maximize your 
-                                retail profit margins without compromising on quality.
+                                Factory-direct rates for maximum retail profit. Cut out the middlemen 
+                                and increase your margins.
                             </p>
                         </div>
 
                         {/* Benefit 2 */}
                         <div className="benefit-card">
-                            <div className="icon-circle">
-                                <i className="fas fa-shipping-fast"></i>
-                            </div>
+                            <div className="card-number">02</div>
+                            <div className="icon-circle"><i className="fas fa-truck-fast"></i></div>
                             <h3>Strategic Logistics</h3>
                             <p>
                                 Fast and reliable shipping from our <strong>Ahmedabad</strong> distribution center. 
@@ -105,78 +98,48 @@ const Wholesale = () => {
 
                         {/* Benefit 3 */}
                         <div className="benefit-card">
-                            <div className="icon-circle">
-                                <i className="fas fa-cubes"></i>
-                            </div>
+                            <div className="card-number">03</div>
+                            <div className="icon-circle"><i className="fas fa-boxes-stacked"></i></div>
                             <h3>Consistent Supply</h3>
                             <p>
-                                Say goodbye to stockouts. We offer reliable lead times and 
-                                rigorous inventory stability for our partners.
+                                Reliable lead times and inventory stability. We build partnerships 
+                                on trust and consistency.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* --- VISUAL SPLIT SECTION --- */}
+            {/* --- 4. VISUAL SPLIT SECTION (Growth) --- */}
             <section className="partner-visual-section">
                 <div className="split-container">
                     <div className="visual-image">
-                        <img src={partnerImg} alt="Denim Manufacturing" />
+                        <img src={partnerImg} alt="Denim Stack" />
                     </div>
                     <div className="visual-text">
-                        <h3>Grow Your Brand With Us.</h3>
+                        <span className="section-subtitle">SCALABILITY</span>
+                        <h3>Grow With Us.</h3>
                         <p>
                             Whether you are a boutique retailer, a large chain, or an online store, 
-                            our white-label and wholesale solutions are designed to scale with you.
+                            our solutions are designed to scale with you.
                         </p>
                         <ul className="visual-list">
-                            <li><i className="fas fa-check"></i> Low Minimum Order Quantities (MOQs)</li>
-                            <li><i className="fas fa-check"></i> Premium Fabric Selection</li>
-                            <li><i className="fas fa-check"></i> Private Labeling Available</li>
+                            <li>
+                                <i className="fas fa-check-circle"></i> 
+                                <div><strong>Low MOQs:</strong> Start small and scale up.</div>
+                            </li>
+                            <li>
+                                <i className="fas fa-check-circle"></i> 
+                                <div><strong>Premium Fabrics:</strong> Access to top-tier mills.</div>
+                            </li> 
+                            <li>
+                                <i className="fas fa-check-circle"></i> 
+                                <div><strong>Coustomize :</strong>Jeans customized as per your requirements.</div>
+                            </li>
                         </ul>
+                        
+                        
                     </div>
-                </div>
-            </section>
-
-            {/* --- INQUIRY FORM SECTION --- */}
-            <section className="inquiry-section" id="inquiry-form">
-                <div className="inquiry-container">
-                    <div className="form-header">
-                        <h2>Request A Catalog</h2>
-                        <p>Tell us about your business. We'll send you our line sheet and pricing within 24 hours.</p>
-                    </div>
-                    
-                    <form className="ws-form" onSubmit={(e) => e.preventDefault()}>
-                        <div className="form-row">
-                            <div className="form-group">
-                                <label>Full Name</label>
-                                <input type="text" placeholder="John Doe" required />
-                            </div>
-                            <div className="form-group">
-                                <label>Company / Store Name</label>
-                                <input type="text" placeholder="Your Brand" required />
-                            </div>
-                        </div>
-
-                        <div className="form-row">
-                            <div className="form-group">
-                                <label>Email Address</label>
-                                <input type="email" placeholder="john@example.com" required />
-                            </div>
-                            <div className="form-group">
-                                <label>Phone Number</label>
-                                <input type="tel" placeholder="+91 98765 43210" />
-                            </div>
-                        </div>
-
-                        <div className="form-group">
-                            <label>Message / Requirements</label>
-                            <textarea rows="4" placeholder="Tell us about the quantities you are looking for..."></textarea>
-                        </div>
-
-                        <button type="submit" className="submit-btn">Send Inquiry</button>
-                    </form>
                 </div>
             </section>
 

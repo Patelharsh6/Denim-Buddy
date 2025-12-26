@@ -10,7 +10,7 @@ import img4 from '../assets/hero/animation-4.jpg';
 import img5 from '../assets/hero/animation-5.jpg';
 import img6 from '../assets/hero/animation-6.jpg';
 
-const images = [img1, img2, img3, img4, img5, img6 ];
+const images = [ img2, img3, img4, img5, img6 ];
 
 const HeroSlider = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
