@@ -86,7 +86,6 @@ const Footer = () => {
             <div className="footer-bottom">
                 <div className="copyright">
                     <p>© {new Date().getFullYear()} Denim Buddy. All Rights Reserved.</p>
-                    <Link to="/privacy">Privacy Policy</Link>
                 </div>
 
                 {/* DEVELOPER CREDIT SECTION */}

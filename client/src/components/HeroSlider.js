@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap'; 
 import './HeroSlider.css';
+import { useNavigate } from 'react-router-dom'; // <--- Import this
 
 // Import images
 import img1 from '../assets/hero/bg-image.jpg';
@@ -15,6 +16,7 @@ const images = [ img2, img3, img4, img5, img6 ];
 const HeroSlider = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const containerRef = useRef(null);
+    const navigate = useNavigate();
 
     // 1. IMAGE SLIDER LOGIC
     useEffect(() => {
@@ -85,8 +87,7 @@ const HeroSlider = () => {
                     <p>The New Standard in Men’s Denim.</p>
                     
                     <div className="hero-buttons">
-                        <button className="btn btn-primary">VIEW COLLECTION</button>
-                        <button className="btn btn-secondary">PARTNER WITH US</button>
+                        <button className="btn btn-secondary" onClick={() => navigate('/contact')}>PARTNER WITH US</button>
                     </div>
                 </div>
             </div>
