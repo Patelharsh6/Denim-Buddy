@@ -153,27 +153,27 @@ const About = () => {
                     {/* RIGHT: The 2x2 Grid (Strict Layout) */}
                     
                     <div className="facts-grid-wrapper">
-                                            <div className="grid-row">
-                                                <div className="grid-box img-box">
-                                                    <img src={img1} alt="Product Sold" />
-                                                    <span className="box-overlay-text">A photo of your Ahmedabad Factory floor.</span>
-                                                </div>
-                                                <div className="grid-box red-box">
-                                                   <h3>50,000+</h3>
-                                                     <p>Units Monthly Capacity</p>
-                                                </div>
-                                             </div>
-                                            <div className="grid-row">
-                                                <div className="grid-box red-box">
-                                                    <h3>200+</h3>
-                                                    <p>Partners</p>
-                                                </div>
-                                                <div className="grid-box img-box">
-                                                    <img src={stitchingImg} alt="Stitching Detail" />
-                                                    <span className="box-overlay-text">A close-up of your Premium Denim stitching.</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                        <div className="grid-row">
+                            <div className="grid-box img-box">
+                                <img src={img1} alt="Product Sold" />
+                                <span className="box-overlay-text"></span>
+                            </div>
+                            <div className="grid-box red-box">
+                                <h3>50,000+</h3>
+                                <p>Units Monthly Capacity</p>
+                            </div>
+                        </div>
+                        <div className="grid-row">
+                            <div className="grid-box red-box">
+                                <h3>200+</h3>
+                                <p>Partners</p>
+                            </div>
+                            <div className="grid-box img-box">
+                                <img src={stitchingImg} alt="Stitching Detail" />
+                                <span className="box-overlay-text"></span>
+                            </div>
+                            </div>
+                        </div>
 
                     </div>
             </section>
