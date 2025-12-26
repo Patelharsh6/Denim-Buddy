@@ -41,7 +41,7 @@ const Footer = () => {
                     <h4>Explore</h4>
                     <ul className="footer-links">
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/about">Our Story</Link></li>
+                        <li><Link to="/about">About Us</Link></li>
                         <li><Link to="/wholesale">Wholesale & Partnership</Link></li>
                         <li><Link to="/contact">Contact Us</Link></li>
                     </ul>
@@ -61,7 +61,7 @@ const Footer = () => {
                                 <i className="fas fa-map-marker-alt"></i>
                                 <span>
                                     29, Ground Floor, Laxmi Vishnu Market,<br />
-                                    Nr. Gheekanta Metro, Ahmedabad
+                                    Nr. Gheekanta Metro, Ahmedabad, Gujarat, India - 380001
                                 </span>
                             </a>
                         </li>

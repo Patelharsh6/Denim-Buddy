@@ -169,7 +169,7 @@ const About = () => {
                                 <p>Partners</p>
                             </div>
                             <div className="grid-box img-box">
-                                <img src={stitchingImg} alt="Stitching Detail" />
+                                <img src={img2} alt="Stitching Detail" />
                                 <span className="box-overlay-text"></span>
                             </div>
                             </div>

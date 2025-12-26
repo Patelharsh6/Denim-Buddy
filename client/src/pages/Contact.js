@@ -44,7 +44,7 @@ const Contact = () => {
                         <div className="card-text">
                             <h3>Office Address</h3>
                             <p>29, Ground Floor, Laxmi Vishnu Market</p>
-                            <p>Nr. Gheekanta Metro Station, Ahmedabad-380001</p>
+                            <p>Nr. Gheekanta Metro Station, Ahmedabad, Gujarat, India -380001</p>
                         </div>
                     </a>
 

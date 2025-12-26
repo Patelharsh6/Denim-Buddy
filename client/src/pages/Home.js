@@ -124,7 +124,7 @@ const Home = () => {
             <section className="info-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Vertical Integration. Unrivaled Quality.</h2>
+                        <h2>Fun Fact</h2>
                         <div className="accent-line"></div>
                         <p>We are more than a brand—we are the makers.</p>
                     </div>
