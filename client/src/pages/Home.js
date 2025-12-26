@@ -8,9 +8,9 @@ import HeroSlider from '../components/HeroSlider';
 import img1 from '../assets/hero/productsold.jpg'; 
 import img2 from '../assets/hero/fit-image.jpg';
 import img3 from '../assets/hero/yourstyle.jpg';
-import aboutHero from '../assets/hero/yourstyle.jpg';
-import factoryImg from '../assets/hero/yourstyle.jpg';
-import stitchingImg from '../assets/hero/yourstyle.jpg';
+import aboutHero from '../assets/hero/auto1.jpg';
+import factoryImg from '../assets/hero/auto2.jpg';
+import stitchingImg from '../assets/hero/auto3.jpg';
 
 
 gsap.registerPlugin(ScrollTrigger);
